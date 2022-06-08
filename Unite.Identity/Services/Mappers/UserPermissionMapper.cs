@@ -25,6 +25,11 @@ namespace Unite.Identity.Services.Mappers
             entity.HasOne<EnumValue<Permission>>()
                   .WithMany()
                   .HasForeignKey(userPermission => userPermission.PermissionId);
+
+            entity.HasOne(userPermission => userPermission.User)
+                  .WithMany(user => user.UserPermissions)
+                  .HasForeignKey(userPermission => userPermission.UserId)
+                  .IsRequired();
         }
     }
 }
