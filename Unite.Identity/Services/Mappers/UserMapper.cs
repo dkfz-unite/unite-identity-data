@@ -24,6 +24,10 @@ namespace Unite.Identity.Services.Mappers
 
             entity.Property(user => user.Password)
                   .IsRequired();
+
+            entity.Property(user => user.IsRoot)
+                  .IsRequired()
+                  .HasDefaultValue(false);
         }
     }
 }
