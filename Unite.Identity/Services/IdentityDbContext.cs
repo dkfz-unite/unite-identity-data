@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Unite.Identity.Entities;
 using Unite.Identity.Services.Configuration.Options;
-using Unite.Identity.Services.Extensions.Models;
 
 namespace Unite.Identity.Services
 {
@@ -12,6 +11,7 @@ namespace Unite.Identity.Services
 
         public DbSet<User> Users { get; set; }
         public DbSet<UserSession> UserSessions { get; set; }
+        public DbSet<UserPermission> UserPermissions { get; set; }
 
 
         public IdentityDbContext(ISqlOptions options)
@@ -31,8 +31,10 @@ namespace Unite.Identity.Services
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.BuildUserModel();
-            modelBuilder.BuildUserSessionModel();
+            modelBuilder.ApplyConfiguration(new Mappers.Enums.PermissionMapper());
+            modelBuilder.ApplyConfiguration(new Mappers.UserMapper());
+            modelBuilder.ApplyConfiguration(new Mappers.UserSessionMapper());
+            modelBuilder.ApplyConfiguration(new Mappers.UserPermissionMapper());
         }
     }
 }
