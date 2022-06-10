@@ -28,6 +28,10 @@ namespace Unite.Identity.Services.Mappers
             entity.Property(user => user.IsRoot)
                   .IsRequired()
                   .HasDefaultValue(false);
+
+            entity.Property(user => user.IsRegistered)
+                  .IsRequired()
+                  .HasDefaultValue(false);
         }
     }
 }

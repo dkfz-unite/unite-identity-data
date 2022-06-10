@@ -12,8 +12,6 @@ namespace Unite.Identity.Services
         public DbSet<User> Users { get; set; }
         public DbSet<UserSession> UserSessions { get; set; }
         public DbSet<UserPermission> UserPermissions { get; set; }
-        public DbSet<Candidate> Candidates { get; set; }
-        public DbSet<CandidatePermission> CandidatePermissions { get; set; }
 
 
         public IdentityDbContext(ISqlOptions options)
@@ -37,8 +35,6 @@ namespace Unite.Identity.Services
             modelBuilder.ApplyConfiguration(new Mappers.UserMapper());
             modelBuilder.ApplyConfiguration(new Mappers.UserSessionMapper());
             modelBuilder.ApplyConfiguration(new Mappers.UserPermissionMapper());
-            modelBuilder.ApplyConfiguration(new Mappers.CandidateMapper());
-            modelBuilder.ApplyConfiguration(new Mappers.CandidatePermissionMapper());
         }
     }
 }
