@@ -4,32 +4,31 @@ using Unite.Identity.Entities;
 using Unite.Identity.Entities.Enums;
 using Unite.Identity.Services.Models;
 
-namespace Unite.Identity.Services.Mappers
+namespace Unite.Identity.Services.Mappers;
+
+internal class UserPermissionMapper : IEntityTypeConfiguration<UserPermission>
 {
-    internal class UserPermissionMapper : IEntityTypeConfiguration<UserPermission>
+    public void Configure(EntityTypeBuilder<UserPermission> entity)
     {
-        public void Configure(EntityTypeBuilder<UserPermission> entity)
-        {
-            entity.ToTable("UserPermissions");
+        entity.ToTable("UserPermissions");
 
-            entity.HasKey(userPermission => new { userPermission.UserId, userPermission.PermissionId });
+        entity.HasKey(userPermission => new { userPermission.UserId, userPermission.PermissionId });
 
-            entity.Property(userPermission => userPermission.UserId)
-                  .IsRequired();
+        entity.Property(userPermission => userPermission.UserId)
+              .IsRequired();
 
-            entity.Property(userPermission => userPermission.PermissionId)
-                  .IsRequired()
-                  .HasConversion<int>();
+        entity.Property(userPermission => userPermission.PermissionId)
+              .IsRequired()
+              .HasConversion<int>();
 
 
-            entity.HasOne<EnumValue<Permission>>()
-                  .WithMany()
-                  .HasForeignKey(userPermission => userPermission.PermissionId);
+        entity.HasOne<EnumValue<Permission>>()
+              .WithMany()
+              .HasForeignKey(userPermission => userPermission.PermissionId);
 
-            entity.HasOne(userPermission => userPermission.User)
-                  .WithMany(user => user.UserPermissions)
-                  .HasForeignKey(userPermission => userPermission.UserId)
-                  .IsRequired();
-        }
+        entity.HasOne(userPermission => userPermission.User)
+              .WithMany(user => user.UserPermissions)
+              .HasForeignKey(userPermission => userPermission.UserId)
+              .IsRequired();
     }
 }

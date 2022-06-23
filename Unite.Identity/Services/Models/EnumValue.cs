@@ -1,25 +1,23 @@
-﻿using System;
-using Unite.Identity.Extensions;
+﻿using Unite.Identity.Extensions;
 
-namespace Unite.Identity.Services.Models
+namespace Unite.Identity.Services.Models;
+
+internal class EnumValue<T> where T : Enum
 {
-    internal class EnumValue<T> where T : Enum
-    {
-        public T Id { get; set; }
-        public string Value { get; set; }
-        public string Name { get; set; }
-    }
+    public T Id { get; set; }
+    public string Value { get; set; }
+    public string Name { get; set; }
+}
 
-    internal static class EnumExtensions
+internal static class EnumExtensions
+{
+    public static EnumValue<T> ToEnumValue<T>(this T id, string value = null, string name = null) where T : Enum
     {
-        public static EnumValue<T> ToEnumValue<T>(this T id, string value = null, string name = null) where T : Enum
+        return new EnumValue<T>()
         {
-            return new EnumValue<T>()
-            {
-                Id = id,
-                Value = value ?? id.ToDefinitionString(),
-                Name = name ?? id.ToDefinitionString()
-            };
-        }
+            Id = id,
+            Value = value ?? id.ToDefinitionString(),
+            Name = name ?? id.ToDefinitionString()
+        };
     }
 }
