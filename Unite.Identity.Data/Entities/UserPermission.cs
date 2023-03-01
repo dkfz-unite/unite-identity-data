@@ -1,6 +1,6 @@
-﻿using Unite.Identity.Entities.Enums;
+﻿using Unite.Identity.Data.Entities.Enums;
 
-namespace Unite.Identity.Entities;
+namespace Unite.Identity.Data.Entities;
 
 public class UserPermission
 {

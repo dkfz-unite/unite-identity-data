@@ -1,6 +1,6 @@
-﻿using Unite.Identity.Extensions;
+﻿using Unite.Identity.Data.Extensions;
 
-namespace Unite.Identity.Services.Models;
+namespace Unite.Identity.Data.Services.Models;
 
 internal class EnumValue<T> where T : Enum
 {

@@ -1,4 +1,4 @@
-﻿namespace Unite.Identity.Entities;
+﻿namespace Unite.Identity.Data.Entities;
 
 public class User
 {

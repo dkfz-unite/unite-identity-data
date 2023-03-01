@@ -1,2 +1,2 @@
-# unite-identity
-Unite identity models and services package. 
+# unite-identity-data
+Unite identity data models and services package. 

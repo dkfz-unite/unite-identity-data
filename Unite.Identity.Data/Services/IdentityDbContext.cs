@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Unite.Identity.Entities;
-using Unite.Identity.Services.Configuration.Options;
+using Unite.Identity.Data.Entities;
+using Unite.Identity.Data.Services.Configuration.Options;
 
-namespace Unite.Identity.Services;
+namespace Unite.Identity.Data.Services;
 
 public class IdentityDbContext : DbContext
 {
@@ -24,7 +24,7 @@ public class IdentityDbContext : DbContext
     {
         optionsBuilder.EnableSensitiveDataLogging();
 
-        optionsBuilder.UseNpgsql(_connectionString, b => b.MigrationsAssembly("Unite.Identity.Migrations"));
+        optionsBuilder.UseNpgsql(_connectionString, b => b.MigrationsAssembly("Unite.Identity.Data.Migrations"));
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

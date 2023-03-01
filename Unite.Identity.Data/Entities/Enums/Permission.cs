@@ -1,7 +1,7 @@
 ﻿using System.Runtime.Serialization;
-using Unite.Identity.Entities.Constants;
+using Unite.Identity.Data.Entities.Constants;
 
-namespace Unite.Identity.Entities.Enums;
+namespace Unite.Identity.Data.Entities.Enums;
 
 public enum Permission
 {

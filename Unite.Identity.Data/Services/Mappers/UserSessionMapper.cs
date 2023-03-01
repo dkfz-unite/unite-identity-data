@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Unite.Identity.Entities;
+using Unite.Identity.Data.Entities;
 
-namespace Unite.Identity.Services.Mappers;
+namespace Unite.Identity.Data.Services.Mappers;
 
 internal class UserSessionMapper : IEntityTypeConfiguration<UserSession>
 {

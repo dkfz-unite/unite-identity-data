@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace Unite.Identity.Extensions;
+namespace Unite.Identity.Data.Extensions;
 
 public static class EnumExtensions
 {

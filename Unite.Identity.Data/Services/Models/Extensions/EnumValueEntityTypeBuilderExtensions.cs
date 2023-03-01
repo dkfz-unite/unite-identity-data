@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Unite.Identity.Services.Models.Extensions;
+namespace Unite.Identity.Data.Services.Models.Extensions;
 
 internal static class EnumValueEntityTypeBuilderExtensions
 {

@@ -1,10 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Unite.Identity.Entities;
-using Unite.Identity.Entities.Enums;
-using Unite.Identity.Services.Models;
+using Unite.Identity.Data.Entities;
+using Unite.Identity.Data.Entities.Enums;
+using Unite.Identity.Data.Services.Models;
 
-namespace Unite.Identity.Services.Mappers;
+namespace Unite.Identity.Data.Services.Mappers;
 
 internal class UserPermissionMapper : IEntityTypeConfiguration<UserPermission>
 {
