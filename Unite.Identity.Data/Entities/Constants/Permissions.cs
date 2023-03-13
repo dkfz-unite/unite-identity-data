@@ -1,4 +1,4 @@
-﻿namespace Unite.Identity.Entities.Constants;
+﻿namespace Unite.Identity.Data.Entities.Constants;
 
 public static class Permissions
 {

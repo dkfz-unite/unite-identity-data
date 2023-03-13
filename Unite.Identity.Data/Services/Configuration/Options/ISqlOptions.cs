@@ -1,4 +1,4 @@
-﻿namespace Unite.Identity.Services.Configuration.Options;
+﻿namespace Unite.Identity.Data.Services.Configuration.Options;
 
 public interface ISqlOptions
 {
