@@ -26,7 +26,7 @@ jobs:
     - name: Test
       run: dotnet test --no-restore --verbosity normal
     - name: Pack
-      run: dotnet pack Unite.Identity/Unite.Identity.csproj --output nuget-packages --configuration Release
+      run: dotnet pack Unite.Identity.Data/Unite.Identity.Data.csproj --output nuget-packages --configuration Release
     - name: Push
       run: dotnet nuget push nuget-packages/*.nupkg -s "github" -k ${{ secrets.GITHUB_TOKEN }} --skip-duplicate
 #     run: dotnet nuget push nuget-packages/*.nupkg --api-key ${{ secrets.GITHUB_TOKEN }} --source https://api.nuget.org/v3/index.json
