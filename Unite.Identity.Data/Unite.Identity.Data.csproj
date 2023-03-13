@@ -11,33 +11,6 @@
 		<Description>Unite identity models and services package.</Description>
 	</PropertyGroup>
 	<ItemGroup>
-		<None Remove="Npgsql.EntityFrameworkCore.PostgreSQL" />
-		<None Remove="Entities\" />
-		<None Remove="Services\" />
-		<None Remove="Services\Configuration\" />
-		<None Remove="Services\Configuration\Options\" />
-		<None Remove="Entities\Enums\" />
-		<None Remove="Entities\Constants\" />
-		<None Remove="Services\Mappers\" />
-		<None Remove="Services\Models\" />
-		<None Remove="Extensions\" />
-		<None Remove="Services\Models\Extensions\" />
-		<None Remove="Services\Mappers\Enums\" />
-	</ItemGroup>
-	<ItemGroup>
 		<PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.5" />
-	</ItemGroup>
-	<ItemGroup>
-		<Folder Include="Entities\" />
-		<Folder Include="Services\" />
-		<Folder Include="Services\Configuration\" />
-		<Folder Include="Services\Configuration\Options\" />
-		<Folder Include="Entities\Enums\" />
-		<Folder Include="Entities\Constants\" />
-		<Folder Include="Services\Mappers\" />
-		<Folder Include="Services\Models\" />
-		<Folder Include="Extensions\" />
-		<Folder Include="Services\Models\Extensions\" />
-		<Folder Include="Services\Mappers\Enums\" />
 	</ItemGroup>
 </Project>
