@@ -26,7 +26,7 @@ internal class UserMapper : IEntityTypeConfiguration<User>
               .IsRequired()
               .HasDefaultValue(false);
 
-        entity.Property(user => user.IsRegistered)
+        entity.Property(user => user.IsActive)
               .IsRequired()
               .HasDefaultValue(false);
     }
