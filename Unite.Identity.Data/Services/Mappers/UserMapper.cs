@@ -29,5 +29,10 @@ internal class UserMapper : IEntityTypeConfiguration<User>
         entity.Property(user => user.IsActive)
               .IsRequired()
               .HasDefaultValue(false);
+
+        entity.HasOne(user => user.Provider)
+              .WithMany(provider => provider.Users)
+              .HasForeignKey(user => user.ProviderId)
+              .IsRequired();
     }
 }
