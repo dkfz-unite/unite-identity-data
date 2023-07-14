@@ -3,7 +3,7 @@
 public interface ILdapOptions
 {
     string Server { get; }
-    string Port { get; }
+    int? Port { get; }
     string UserTargetOU { get; }
     string ServiceUserRNA { get; }
     string ServiceUserPassword { get; }
