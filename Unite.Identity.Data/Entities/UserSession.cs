@@ -1,6 +1,6 @@
 ﻿namespace Unite.Identity.Data.Entities;
 
-public class UserSession
+public record UserSession
 {
     public int UserId { get; set; }
     public string Client { get; set; }

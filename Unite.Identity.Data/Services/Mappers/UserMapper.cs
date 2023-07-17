@@ -10,13 +10,19 @@ internal class UserMapper : IEntityTypeConfiguration<User>
     {
         entity.ToTable("Users");
 
+
         entity.HasKey(user => user.Id);
 
         entity.HasAlternateKey(user => user.Email);
 
+
         entity.Property(user => user.Id)
               .IsRequired()
               .ValueGeneratedOnAdd();
+
+        entity.Property(user => user.ProviderId)
+              .IsRequired()
+              .ValueGeneratedNever();
 
         entity.Property(user => user.Email)
               .IsRequired()
@@ -29,6 +35,7 @@ internal class UserMapper : IEntityTypeConfiguration<User>
         entity.Property(user => user.IsActive)
               .IsRequired()
               .HasDefaultValue(false);
+
 
         entity.HasOne(user => user.Provider)
               .WithMany(provider => provider.Users)

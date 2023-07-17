@@ -2,7 +2,7 @@
 
 namespace Unite.Identity.Data.Entities;
 
-public class UserPermission
+public record UserPermission
 {
     public int UserId { get; set; }
     public Permission PermissionId { get; set; }

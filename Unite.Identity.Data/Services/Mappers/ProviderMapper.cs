@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Unite.Identity.Data.Entities;
 
@@ -28,11 +27,9 @@ internal class ProviderMapper : IEntityTypeConfiguration<Provider>
               .IsRequired()
               .HasDefaultValue(false);
 
-        entity.Property(provider => provider.Priority);
 
         entity.HasMany(provider => provider.Users)
               .WithOne(user => user.Provider)
               .IsRequired();
     }
 }
-

@@ -1,6 +1,6 @@
 ﻿namespace Unite.Identity.Data.Entities;
 
-public class Provider
+public record Provider
 {
     public int Id { get; set; }
     public string Name { get; set; }

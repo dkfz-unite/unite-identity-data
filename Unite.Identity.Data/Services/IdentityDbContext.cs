@@ -12,6 +12,7 @@ public class IdentityDbContext : DbContext
     public DbSet<User> Users { get; set; }
     public DbSet<UserSession> UserSessions { get; set; }
     public DbSet<UserPermission> UserPermissions { get; set; }
+    public DbSet<Provider> Providers { get; set; }
 
 
     public IdentityDbContext(ISqlOptions options)
@@ -35,5 +36,6 @@ public class IdentityDbContext : DbContext
         modelBuilder.ApplyConfiguration(new Mappers.UserMapper());
         modelBuilder.ApplyConfiguration(new Mappers.UserSessionMapper());
         modelBuilder.ApplyConfiguration(new Mappers.UserPermissionMapper());
+        modelBuilder.ApplyConfiguration(new Mappers.ProviderMapper());
     }
 }
