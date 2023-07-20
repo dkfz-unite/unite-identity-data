@@ -12,6 +12,8 @@ internal class ProviderMapper : IEntityTypeConfiguration<Provider>
 
         entity.HasKey(provider => provider.Id);
 
+        entity.HasAlternateKey(provider => provider.Name);
+
         entity.Property(provider => provider.Id)
               .IsRequired()
               .ValueGeneratedOnAdd();
@@ -21,6 +23,7 @@ internal class ProviderMapper : IEntityTypeConfiguration<Provider>
               .HasMaxLength(100);
 
         entity.Property(provider => provider.Label)
+              .IsRequired()
               .HasMaxLength(100);
 
         entity.Property(provider => provider.IsActive)
