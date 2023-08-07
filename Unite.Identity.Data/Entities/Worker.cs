@@ -1,6 +1,6 @@
 namespace Unite.Identity.Data.Entities;
 
-public record Service
+public record Worker
 {
     public int Id { get; set; }
     public string Name { get; set; }
@@ -8,5 +8,5 @@ public record Service
     public string Token { get; set; }
     public DateTime? TokenExpiryDate { get; set; }
 
-    public virtual ICollection<ServicePermission> ServicePermissions { get; set; }
+    public virtual ICollection<WorkerPermission> WorkerPermissions { get; set; }
 }

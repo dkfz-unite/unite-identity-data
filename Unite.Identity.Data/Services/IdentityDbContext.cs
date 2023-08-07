@@ -13,8 +13,8 @@ public class IdentityDbContext : DbContext
     public DbSet<User> Users { get; set; }
     public DbSet<UserSession> UserSessions { get; set; }
     public DbSet<UserPermission> UserPermissions { get; set; }
-    public DbSet<Service> Services { get; set; }
-    public DbSet<ServicePermission> ServicePermissions { get; set; }
+    public DbSet<Worker> Workers { get; set; }
+    public DbSet<WorkerPermission> WorkerPermissions { get; set; }
 
 
     public IdentityDbContext(ISqlOptions options)
@@ -39,7 +39,7 @@ public class IdentityDbContext : DbContext
         modelBuilder.ApplyConfiguration(new Mappers.UserMapper());
         modelBuilder.ApplyConfiguration(new Mappers.UserSessionMapper());
         modelBuilder.ApplyConfiguration(new Mappers.UserPermissionMapper());
-        modelBuilder.ApplyConfiguration(new Mappers.ServiceMapper());
-        modelBuilder.ApplyConfiguration(new Mappers.ServicePermissionMapper());
+        modelBuilder.ApplyConfiguration(new Mappers.WorkerMapper());
+        modelBuilder.ApplyConfiguration(new Mappers.WorkerPermissionMapper());
     }
 }
