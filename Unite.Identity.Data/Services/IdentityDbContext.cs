@@ -9,10 +9,12 @@ public class IdentityDbContext : DbContext
     private const string _database = "unite_identity";
     private readonly string _connectionString;
 
+    public DbSet<Provider> Providers { get; set; }
     public DbSet<User> Users { get; set; }
     public DbSet<UserSession> UserSessions { get; set; }
     public DbSet<UserPermission> UserPermissions { get; set; }
-    public DbSet<Provider> Providers { get; set; }
+    public DbSet<Service> Services { get; set; }
+    public DbSet<ServicePermission> ServicePermissions { get; set; }
 
 
     public IdentityDbContext(ISqlOptions options)
@@ -32,10 +34,12 @@ public class IdentityDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
+        modelBuilder.ApplyConfiguration(new Mappers.ProviderMapper());
         modelBuilder.ApplyConfiguration(new Mappers.Enums.PermissionMapper());
         modelBuilder.ApplyConfiguration(new Mappers.UserMapper());
         modelBuilder.ApplyConfiguration(new Mappers.UserSessionMapper());
         modelBuilder.ApplyConfiguration(new Mappers.UserPermissionMapper());
-        modelBuilder.ApplyConfiguration(new Mappers.ProviderMapper());
+        modelBuilder.ApplyConfiguration(new Mappers.ServiceMapper());
+        modelBuilder.ApplyConfiguration(new Mappers.ServicePermissionMapper());
     }
 }

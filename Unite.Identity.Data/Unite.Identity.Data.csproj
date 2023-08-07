@@ -1,16 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-	<PropertyGroup>
-		<TargetFramework>net6.0</TargetFramework>
-		<ImplicitUsings>enable</ImplicitUsings>
-		<ReleaseVersion>2.3.0</ReleaseVersion>
-		<Version>2.3.0</Version>
-		<SynchReleaseVersion>false</SynchReleaseVersion>
-		<RepositoryUrl>https://github.com/dkfz-unite/unite-identity-data</RepositoryUrl>
-		<Authors>Valiantsin Ulasau (DKFZ)</Authors>
-		<Description>Unite identity models and services package.</Description>
-	</PropertyGroup>
-	<ItemGroup>
-		<PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.5" />
-	</ItemGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ReleaseVersion>3.0.0</ReleaseVersion>
+    <Version>3.0.0</Version>
+    <SynchReleaseVersion>false</SynchReleaseVersion>
+    <RepositoryUrl>https://github.com/dkfz-unite/unite-identity-data</RepositoryUrl>
+    <Authors>Valiantsin Ulasau (DKFZ)</Authors>
+    <Description>Unite identity models and services package.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.5" />
+  </ItemGroup>
 </Project>
