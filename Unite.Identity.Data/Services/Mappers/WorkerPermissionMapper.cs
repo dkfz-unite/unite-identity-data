@@ -26,9 +26,9 @@ internal class WorkerPermissionMapper : IEntityTypeConfiguration<WorkerPermissio
               .WithMany()
               .HasForeignKey(workerPermission => workerPermission.PermissionId);
 
-        entity.HasOne(workerPermission => workerPermission.Worker)
-              .WithMany(worker => worker.WorkerPermissions)
-              .HasForeignKey(workerPermission => workerPermission.WorkerId)
-              .IsRequired();
+      //   entity.HasOne(workerPermission => workerPermission.Worker)
+      //         .WithMany(worker => worker.WorkerPermissions)
+      //         .HasForeignKey(workerPermission => workerPermission.WorkerId)
+      //         .IsRequired();
     }
 }
