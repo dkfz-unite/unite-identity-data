@@ -10,7 +10,7 @@ internal class TokenPermissionMapper : IEntityTypeConfiguration<TokenPermission>
 {
 public void Configure(EntityTypeBuilder<TokenPermission> entity)
 {
-      entity.ToTable("TokenPermission");
+      entity.ToTable("TokenPermissions");
 
       entity.HasKey(tokenPermission => new { tokenPermission.TokenId, tokenPermission.PermissionId });
 
