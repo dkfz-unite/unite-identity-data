@@ -36,6 +36,10 @@ internal class UserMapper : IEntityTypeConfiguration<User>
               .IsRequired()
               .HasDefaultValue(false);
 
+        entity.Property(user => user.LastActive)
+              .IsRequired()
+              .HasDefaultValue(DateTime.UtcNow);
+
 
         entity.HasOne(user => user.Provider)
               .WithMany(provider => provider.Users)
