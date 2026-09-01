@@ -19,6 +19,10 @@ internal class UserSessionMapper : IEntityTypeConfiguration<UserSession>
               .IsRequired()
               .HasMaxLength(100);
 
+        entity.Property(userSession => userSession.Expires)
+              .IsRequired()
+              .HasDefaultValueSql("CURRENT_TIMESTAMP");
+
 
         entity.HasOne(userSession => userSession.User)
               .WithMany(user => user.UserSessions)
