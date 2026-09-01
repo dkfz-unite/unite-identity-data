@@ -21,7 +21,7 @@ internal class UserSessionMapper : IEntityTypeConfiguration<UserSession>
 
         entity.Property(userSession => userSession.Expires)
               .IsRequired()
-              .HasDefaultValue(DateTime.UtcNow.AddDays(30));
+              .HasDefaultValueSql("CURRENT_TIMESTAMP");
 
 
         entity.HasOne(userSession => userSession.User)

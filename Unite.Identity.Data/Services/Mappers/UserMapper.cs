@@ -38,7 +38,7 @@ internal class UserMapper : IEntityTypeConfiguration<User>
 
         entity.Property(user => user.LastActive)
               .IsRequired()
-              .HasDefaultValue(DateTime.UtcNow);
+              .HasDefaultValueSql("CURRENT_TIMESTAMP");
 
 
         entity.HasOne(user => user.Provider)
