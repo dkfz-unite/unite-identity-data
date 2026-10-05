@@ -10,10 +10,15 @@ internal class UserSessionMapper : IEntityTypeConfiguration<UserSession>
     {
         entity.ToTable("UserSessions");
 
-        entity.HasKey(userSession => new { userSession.UserId, userSession.Session });
+        entity.HasKey(userSession => userSession.Id);
+
+        entity.Property(userSession => userSession.Id)
+              .IsRequired()
+              .ValueGeneratedOnAdd();
 
         entity.Property(userSession => userSession.UserId)
-              .IsRequired();
+              .IsRequired()
+              .ValueGeneratedNever();
 
         entity.Property(userSession => userSession.Session)
               .IsRequired()
@@ -30,6 +35,7 @@ internal class UserSessionMapper : IEntityTypeConfiguration<UserSession>
               .IsRequired();
 
 
-        entity.HasIndex(userSession => userSession.Session);
+        entity.HasIndex(userSession => userSession.Session)
+              .IsUnique();
     }
 }

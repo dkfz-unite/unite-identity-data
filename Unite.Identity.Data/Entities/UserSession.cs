@@ -2,6 +2,7 @@
 
 public record UserSession
 {
+    public int Id { get; set; }
     public int UserId { get; set; }
     public string Client { get; set; }
     public string Session { get; set; }
